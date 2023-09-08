@@ -1,26 +1,19 @@
-#include <stdlib.h>
-#include <time.h>
-/* more headers goes there */
 #include <stdio.h>
+#include <ctype.h>
 /**
- * main - Prints the last digit of random number
+ * main - Entrypoint
  *
- * Return: Return 0
+ * Return: Always 0 (success)
  */
 int main(void)
 {
-	int n;
-	int last;
+	int letter;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	last = n % 10;
-
-	if (last == 0)
-		printf("Last digit of %d is %d and is 0\n", n, last);
-	else if (last > 5)
-		printf("Last digit of %d is %d and is greater than 5\n", n, last);
-	else
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+		letter = tolower(letter);
+		putchar(letter);
+	}
+	putchar('\n');
 	return (0);
 }
