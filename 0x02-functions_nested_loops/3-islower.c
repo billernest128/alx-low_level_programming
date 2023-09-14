@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include "main.h"
 /**
+ * _islower - function name
+ * @c : varable
+ * description : checks if it is caselower
  *
+ * Return: int
+ *
+ * FUNCTIONALITY *
  */
 
 int _islower(int c)
