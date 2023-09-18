@@ -1,11 +1,11 @@
 #include "main.h"
-
 /**
- * char 8_stypy - function that copies the string pointed to by src
+ * _strcpy - Copy paste String
  *@dest: destination
  *@src: source
  *Return: dest
  */
+
 char *_strcpy(char *dest, char *src)
 {
 	int inc = 0;
