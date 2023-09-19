@@ -6,22 +6,22 @@
  */
 void puts_half(char *s)
 {
-	int length = 0;
-	int i;
+    int length = 0;
+    int i;
 
-	/* calculate the length of the string */
-	while (s[length] != '\0')
-	{
-	length++;
-	}
+    /* calculate the length of the string */
+    while (s[length] != '\0')
+    {
+        length++;
+    }
 
-	/* start from the middle of the string */
-	i = length / 2; 
-	while (s[i] != '\0')
-	}
-	_putchar(s[i]);
-	i++;
-	}
+    /* start from the middle of the string */
+    i = length / 2;
+    while (s[i] != '\0')
+    {
+        _putchar(s[i]);
+        i++;
+    }
 
-	_putchar('\n');
+    _putchar('\n');
 }
