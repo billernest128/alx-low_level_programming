@@ -1,26 +1,27 @@
 #include "main.h"
 
 /**
- * _atoi - changes a string to an int
- * @s: the string to be changed
- *
- * Return: the converted int
+ * puts_half - prints the second half of a string
+ * @s: the string to be printed
  */
-
-int _atoi(char *s)
+void puts_half(char *s)
 {
-	int i = 1;
+    int length = 0;
+    int i;
 
-	unsigned int num = 0;
+    /* calculate the length of the string */
+    while (s[length] != '\0')
+    {
+        length++;
+    }
 
-	do      {
-		if (*s == '-')
-			i *= -1;
-		else if (*s >= '0' && *s <= '9')
-			num = num * 10 + (*s - '0');
-		else if (num > 0)
-			break;
-	} while (*s++);
-	
-	return (num * i);
+    /* start from the middle of the string */
+    i = length / 2; 
+    while (s[i] != '\0')
+    {
+        _putchar(s[i]);
+	i++;
+    }
+
+    _putchar('\n');
 }
