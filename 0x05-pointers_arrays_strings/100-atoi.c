@@ -7,12 +7,12 @@
  * Return: the converted int
  */
 
-int _atoi(char *s)
+int _atoi(char *s __attribute__((unused)))
 {
 	int i = 1;
 
 	unsigned int num = 0;
-	:	
+		
 	do	{
 		if (*s == '-')
 			i *= -1;
