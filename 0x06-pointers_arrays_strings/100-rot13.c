@@ -19,6 +19,7 @@ char *rot13(char *s)
 	for (i = 0; s[i]; i++)
 	{
 	char *p = strchr(letters, s[i]);
+
 	if (p)
 	s[i] = rot13[p - letters];
 	}
