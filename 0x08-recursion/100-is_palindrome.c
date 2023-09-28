@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <string.h>
 
 /**
@@ -8,25 +9,17 @@
  */
 int is_palindrome(char *s)
 {
-	int length = 0;
 	int start = 0;
-	int end;
-
-	/* Find the length of the string */
-	while (s[length] != '\0')
-	{
-	length++;
-	}
-
-	end = length - 1;
+	int end = strlen(s) - 1;
 
 	while (start < end)
 	{
-	if (s[start] != s[end])
-	return (0);
-
+	if (!isalnum(s[start]))
 	start++;
+	else if (!isalnum(s[end]))
 	end--;
+	else if (tolower(s[start++]) != tolower(s[end--]))
+	return (0);
 	}
 
 	return (1);
