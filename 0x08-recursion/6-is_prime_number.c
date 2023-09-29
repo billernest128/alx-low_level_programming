@@ -1,31 +1,45 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * is_prime_number - Checks if an integer is a prime number.
- * @n: The integer to check.
+ * is_prime_number - Checks if a number is prime.
+ * @n: The number to check for primality.
  *
- * Return: 1 if n is a prime number, otherwise 0.
+ * Return: 1 if n is prime, 0 otherwise.
  */
 int is_prime_number(int n)
 {
-	int i;
+	int divisor;
 
 	if (n <= 1)
-	return (0);
-
-	if (n <= 3)
-	return (1);
-
-	if (n % 2 == 0 || n % 3 == 0)
-	return (0);
-
-	for (i = 5; i * i <= n; i += 6)
 	{
-	if (n % i == 0 || n % (i + 2) == 0)
+	/* 0 and 1 are not prime */
 	return (0);
 	}
 
+	if (n <= 3)
+	{
+	/* 2 and 3 are prime */
+	return (1);
+	}
+
+	if (n % 2 == 0 || n % 3 == 0)
+	{
+	/* Divisible by 2 or 3, not prime */
+	return (0);
+	}
+
+	divisor = 5;
+	while (divisor * divisor <= n)
+	{
+	if (n % divisor == 0 || n % (divisor + 2) == 0)
+	{
+	/* Divisible by divisor or divisor + 2, not prime */
+	return (0);
+	}
+	divisor += 6;
+	}
+
+	/* o divisors found, n is prime */
 	return (1);
 }
 
