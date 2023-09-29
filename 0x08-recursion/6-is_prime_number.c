@@ -18,13 +18,3 @@ int is_prime_number(int n)
     return is_prime_recursive(n, 5);
 }
 
-int main(void)
-{
-    printf("is_prime_number(1): %s\n", is_prime_number(1) ? "SUCCESS" : "FAILURE");
-    printf("is_prime_number(103): %s\n", is_prime_number(103) ? "SUCCESS" : "FAILURE");
-    printf("is_prime_number(-7): %s\n", is_prime_number(-7) ? "SUCCESS" : "FAILURE");
-    printf("is_prime_number(104729): %s\n", is_prime_number(104729) ? "SUCCESS" : "FAILURE");
-
-    return 0;
-}
-
