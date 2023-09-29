@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
     numCoins = sizeof(coins) / sizeof(coins[0]);
     count = 0;
 
-    for (int i = 0; i < numCoins; i++)
+    for (i = 0; i < numCoins; i++)
     {
         while (cents >= coins[i])
         {
