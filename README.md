@@ -1,2 +1,3 @@
-alx-low_level_programming
-low level programing
+0x00. C - Hello, World
+
+#preprocessor
