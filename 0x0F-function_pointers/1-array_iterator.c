@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+
 /** 
  * Check if the array is NULL.
  * Check if the action pointer is NULL.
@@ -7,11 +8,14 @@
 
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	size_t i;
 
-	for (i = 0; i < size; i++)
+	if (array == NULL || action == NULL)
+		return;
+
+	while (size-- > 0)
 	{
-		action(array[i]);
+		action(*array);
+		array++;
 	}
 }
 
