@@ -1,9 +1,11 @@
 #include "function_pointers.h"
 
-/** 
- * Check if the array is NULL.
- * Check if the action pointer is NULL.
- * Iterate over the array and call the action function on each element.
+/**
+ * Iterates over an array and calls an action function on each element.
+ *
+ * @param array The array to iterate over.
+ * @param size The size of the array.
+ * @param action The action function to call on each element of the array.
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
