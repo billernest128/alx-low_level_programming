@@ -1,24 +1,16 @@
-#include <stdio.h>
 #include "main.h"
 
-void print_binary(unsigned long int n, int bit_n)
-{
-    for (int i = bit_n - 1; i >= 0; i--)
-    {
-        int bit = n >> i;
-        if (bit & 1)
-        {
-            putchar(1);
-        }
-        else
-        {
-            putchar(0);
-        }
-    }
-}
+/**
+*print_binary - prints the binary representation of a number
+*@n: number to be printed
+*
+*Return: void
+*/
 
-int main()
+void print_binary(unsigned long int n)
 {
-    print_binary(10);
-    return 0;
+if (n > 1)
+	print_binary(n >> 1);
+
+_putchar((n & 1) + '0');
 }
