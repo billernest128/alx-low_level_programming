@@ -1,18 +1,17 @@
-#include <stdio.h>
 #include "main.h"
+
+/**
+*get_bit - get the value of a bit at the given index
+*@n: the number
+*@index: index starting from 0 of the bit required
+*
+*Return: The converted value
+*/
 
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask;
+	if (index > 63)
+		return (-1);
 
-	if (index >= sizeof(n) * 8)
-	{
- 	fprintf(stderr, "Index out of range.\n");
-	return (-1);
-	}
-
-	mask = 1UL << index;
-	bit_value = (n & mask) ? 1 : 0;
-
-	return (bit_value);
+	return ((n >> index) & 1);
 }
