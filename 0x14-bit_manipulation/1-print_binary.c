@@ -1,16 +1,45 @@
-#include "main.h"
+#include <stdio.h>
 
-/**
-*print_binary - prints the binary representation of a number
-*@n: number to be printed
-*
-*Return: void
-*/
+/* Include the declaration of check_valid_string before its usage */
+/* ... Your main code ...*/
+int check_valid_string(const char *b);
 
-void print_binary(unsigned long int n)
+unsigned int binary_to_uint(const char *b)
 {
-if (n > 1)
-	print_binary(n >> 1);
+    unsigned int decimal = 0;
+    int str_len = 0, base = 1;
 
-_putchar((n & 1) + '0');
+    if (!check_valid_string(b))
+        return (0);
+
+    while (b[str_len] != '\0')
+        str_len++;
+
+    while (str_len)
+    {
+        decimal += ((b[str_len - 1] - '0') * base);
+        base *= 2;
+        str_len--;
+    }
+    return (decimal);
+}
+
+int check_valid_string(const char *b)
+{
+    if (b == NULL)
+        return (0);
+
+    while (*b)
+    {
+        if (*b != '1' && *b != '0')
+            return (0);
+        b++;
+    }
+    return (1);
+}
+
+int main()
+{
+    // ... Your main code ...
+    return 0;
 }
